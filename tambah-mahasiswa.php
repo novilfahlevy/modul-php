@@ -1,5 +1,12 @@
 <?php
 
+session_start();
+
+if (!isset($_SESSION['sudah_login'])) {
+  header('Location: login.php');
+  exit;
+}
+
 require 'koneksi.php';
 
 if (isset($_POST['submit'])) {
