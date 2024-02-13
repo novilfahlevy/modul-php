@@ -38,6 +38,7 @@ $result = mysqli_query($koneksi, $sql);
                 <td><?= $mahasiswa['mata_kuliah']; ?></td>
                 <td>
                   <a href="edit-mahasiswa.php?nim=<?= $mahasiswa['nim']; ?>">Edit</a>
+                  <a href="hapus-mahasiswa.php?nim=<?= $mahasiswa['nim']; ?>">Hapus</a>
                 </td>
               </tr>
             <?php endwhile; ?>
