@@ -25,6 +25,7 @@ $result = mysqli_query($koneksi, $sql);
             <th>NIM</th>
             <th>Nama</th>
             <th>Mata Kuliah</th>
+            <th>Aksi</th>
           </tr>
         </thead>
         <tbody>
@@ -35,6 +36,9 @@ $result = mysqli_query($koneksi, $sql);
                 <td><?= $mahasiswa['nim']; ?></td>
                 <td><?= $mahasiswa['nama']; ?></td>
                 <td><?= $mahasiswa['mata_kuliah']; ?></td>
+                <td>
+                  <a href="edit-mahasiswa.php?nim=<?= $mahasiswa['nim']; ?>">Edit</a>
+                </td>
               </tr>
             <?php endwhile; ?>
           <?php endif; ?>
