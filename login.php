@@ -19,6 +19,15 @@ if (isset($_POST['submit'])) {
   if (mysqli_num_rows($result) > 0) {
     $_SESSION['sudah_login'] = true;
 
+    if (isset($_POST['ingatSaya'])) {
+      setcookie(
+        'ingat_saya',
+        'true',
+        time() + (86400 * 7), // 1 minggu
+        '/'
+      );
+    }
+
     header('Location: mahasiswa.php');
     exit;
   } else {
@@ -49,6 +58,12 @@ if (isset($_POST['submit'])) {
               <div class="form-floating mb-3">
                 <input type="password" name="password" class="form-control">
                 <label for="password">Password</label>
+              </div>
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" value="true" name="ingatSaya" id="ingatSaya">
+                <label class="form-check-label" for="ingatSaya">
+                  Ingat saya
+                </label>
               </div>
               <button type="submit" name="submit" class="btn btn-primary w-100">Login</button>
             </form>

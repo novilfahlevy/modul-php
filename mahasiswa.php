@@ -2,6 +2,13 @@
 
 session_start();
 
+// cek 'ingat saya' dulu
+// kalau ingat, tambahkan sudah_login di Session
+if (isset($_COOKIE['ingat_saya'])) {
+  $_SESSION['sudah_login'] = true;
+}
+
+// cek session login
 if (!isset($_SESSION['sudah_login'])) {
   header('Location: login.php');
   exit;
