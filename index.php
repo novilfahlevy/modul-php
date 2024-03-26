@@ -40,6 +40,9 @@ if (isset($_GET['email']) && isset($_GET['pertanyaan'])) {
                 <li><a class="dropdown-item" href="#">Desain Basis Data</a></li>
               </ul>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="login.php">Login</a>
+            </li>
           </ul>
         </div>
       </div>
